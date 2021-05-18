@@ -29,7 +29,7 @@
     "clean": "rm -rf lib",
     "build": "babel src --out-dir lib",
     "test": "jest",
-    "prepare": "npm run test && npm run clean && npm run build"
+    "prepare": "npm run clean && npm run build"
   },
   "keywords": [
     "react",
@@ -39,8 +39,8 @@
   ],
   "dependencies": {
     "ast-types": "^0.14.2",
-    "lodash": "^4.17.15",
-    "react-docgen": "^5.4.0"
+    "lodash": "^4.17.21",
+    "react-docgen": "git+ssh://git@github.com:phated/react-docgen.git#master"
   },
   "license": "MIT"
 }
