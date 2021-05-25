@@ -4,6 +4,7 @@ import actualNameHandler from './actualNameHandler';
 import { relativePath } from './relativePath';
 
 const defaultHandlers = Object.values(ReactDocgen.handlers).map(handler => handler);
+const importer = ReactDocgen.importers.makeFsImporter;
 
 export default function({ types: t }) {
   return {
@@ -24,6 +25,7 @@ function injectReactDocgenInfo(path, state, code, t) {
   const {
     resolver: resolverOpt,
     handlers: handlersOpt,
+    useImporter: useImporterOpt,
     DOC_GEN_COLLECTION_NAME,
     ...opts
   } = state.opts;
@@ -51,6 +53,7 @@ function injectReactDocgenInfo(path, state, code, t) {
     const handlers = [...defaultHandlers, ...customHandlers, actualNameHandler];
     docgenResults = ReactDocgen.parse(code, resolver, handlers, {
       ...opts,
+      ...(useImporterOpt ? { importer: importer() } : {}),
       filename,
     });
 
