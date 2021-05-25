@@ -40,7 +40,7 @@
   "dependencies": {
     "ast-types": "^0.14.2",
     "lodash": "^4.17.21",
-    "react-docgen": "git+ssh://git@github.com:phated/react-docgen.git#master"
+    "react-docgen": "^6.0.0-alpha.0"
   },
   "license": "MIT"
 }
